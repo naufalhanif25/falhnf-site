@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Post List",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["title", "description", "publishedAt", "source"],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "Short post title"
+            },
+            "description": {
+                "type": "string",
+                "description": "Short post description"
+            },
+            "publishedAt": {
+                "type": "string",
+                "description": "Post publication date"
+            },
+            "source": {
+                "type": "string",
+                "description": "Path to post source file"
+            }
+        },
+        "additionalProperties": false
+    }
+}
