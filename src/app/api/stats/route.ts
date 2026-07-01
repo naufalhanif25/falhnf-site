@@ -63,7 +63,9 @@ export async function GET() {
                 query,
                 variables: { username: process.env.GH_USERNAME },
             }),
-            cache: "force-cache",
+            next: {
+                revalidate: 300,
+            },
         })
         const result = await res.json()
 

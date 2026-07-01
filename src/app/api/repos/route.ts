@@ -50,7 +50,9 @@ export async function GET(req: NextRequest) {
                     username: process.env.GH_USERNAME,
                 },
             }),
-            cache: "force-cache",
+            next: {
+                revalidate: 300,
+            },
         })
         const result = await res.json()
 
