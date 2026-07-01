@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Naufal Hanif Portfolio
+
+A personal portfolio website built with Next.js that showcases projects, technical articles, GitHub repositories, and development statistics through a terminal-inspired interface.
+
+The project is designed with a focus on responsiveness, custom UI components, Markdown-based articles, and GitHub API integration.
+
+## Features
+
+- Terminal-inspired user interface
+- Responsive layout with custom scrollbar
+- GitHub repository explorer
+- GitHub statistics dashboard
+- Markdown-powered blog system
+- Dynamic routing for articles
+- Syntax highlighting for code blocks
+- REST API routes powered by Next.js
+- Built with TypeScript and Tailwind CSS
+
+## Tech Stack
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Bun
+- React Markdown
+- Remark & Rehype
+- Lucide React
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone https://github.com/naufalhanif25/falhnf-site.git
+cd falhnf-site
+```
+
+Install the dependencies:
+
+```bash
+npm install
+
+# or
+
+yarn
+
+# or
+
+pnpm install
+
+# or
+
+bun install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
+
 # or
+
 yarn dev
+
 # or
+
 pnpm dev
+
 # or
+
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content Management
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Articles are written in Markdown and stored inside:
 
-## Learn More
+```
+public/posts/contents/
+```
 
-To learn more about Next.js, take a look at the following resources:
+The list of available posts is managed through:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+public/posts/posts.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Each Markdown file begins with front matter metadata followed by the article content.
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create a `.env.local` file before running the project.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example:
+
+```env
+GH_API_URL=
+GH_TOKEN=
+GH_USERNAME=
+```
+
+These variables are required for retrieving GitHub repositories and statistics.
+
+## Build
+
+Create a production build:
+
+```bash
+npm run build
+
+# or
+
+yarn build
+
+# or
+
+pnpm build
+
+# or
+
+bun run build
+```
+
+Start the production server:
+
+```bash
+npm run start
+
+# or
+
+yarn start
+
+# or
+
+pnpm start
+
+# or
+
+bun run start
+```
+
+## License
+
+This project is licensed under the MIT License. You are free to use, modify, distribute, and republish this project in accordance with the terms of the license.
