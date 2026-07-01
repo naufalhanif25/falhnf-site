@@ -1,7 +1,7 @@
 "use server"
 
 import { NextResponse, NextRequest } from "next/server"
-import { format } from "date-fns"
+import { formatInTimeZone } from "date-fns-tz"
 import { RepoResData, RepoResDataProps } from "@/app/api/repos/props"
 
 export async function GET(req: NextRequest) {
@@ -64,7 +64,11 @@ export async function GET(req: NextRequest) {
                     description: repo.description,
                     primaryLanguage: repo.primaryLanguage,
                     url: repo.url,
-                    pushedAt: format(Date.parse(repo.pushedAt), "dd MMM yyyy, HH:mm"),
+                    pushedAt: formatInTimeZone(
+                        Date.parse(repo.pushedAt),
+                        "Asia/Jakarta",
+                        "dd MMM yyyy, HH:mm"
+                    ),
                 })
         )
         const pageInfo = result.data.user.repositories.pageInfo

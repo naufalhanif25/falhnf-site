@@ -2,7 +2,7 @@
 
 import { NextResponse } from "next/server"
 import { LangRes, LangStat } from "@/app/api/stats/props"
-import { format } from "date-fns"
+import { formatInTimeZone } from "date-fns-tz"
 
 export async function GET() {
     try {
@@ -115,7 +115,11 @@ export async function GET() {
             new LangRes({
                 totalSize,
                 stats: {
-                    lastCommit: format(Date.parse(lastCommit), "dd MMM yyyy, HH:mm"),
+                    lastCommit: formatInTimeZone(
+                        Date.parse(lastCommit),
+                        "Asia/Jakarta",
+                        "dd MMM yyyy, HH:mm"
+                    ),
                     repos: repoCount,
                     langs: langs.size,
                     contribs: contributionCount,
