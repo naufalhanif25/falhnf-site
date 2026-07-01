@@ -4,12 +4,13 @@ import { cn } from "@/app/lib/utils"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
-import rehypeHighlight from "rehype-highlight"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { THEME } from "./props"
 
 export default function Markdown({ children }: { children: string | null | undefined }) {
     return (
         <ReactMarkdown
-            rehypePlugins={[rehypeHighlight, rehypeRaw]}
+            rehypePlugins={[rehypeRaw]}
             remarkPlugins={[remarkGfm]}
             components={{
                 h1: ({ children, ...params }) => (
@@ -72,14 +73,28 @@ export default function Markdown({ children }: { children: string | null | undef
                         {children}
                     </hr>
                 ),
-                code: ({ children, ...params }) => (
-                    <code
-                        className={cn("text-gray-200 text-sm", "bg-gray-700/50 px-2 rounded-sm")}
-                        {...params}
-                    >
-                        {children}
-                    </code>
-                ),
+                code: ({ children, className, ...params }) => {
+                    const match = /language-(\w+)/.exec(className || "")
+
+                    if (match) {
+                        return (
+                            <SyntaxHighlighter language={match[1]} style={THEME}>
+                                {String(children)}
+                            </SyntaxHighlighter>
+                        )
+                    }
+                    return (
+                        <code
+                            className={cn(
+                                "text-gray-200 text-sm",
+                                "bg-gray-700/50 px-2 rounded-sm"
+                            )}
+                            {...params}
+                        >
+                            {children}
+                        </code>
+                    )
+                },
                 pre: ({ children, ...params }) => (
                     <pre
                         className={cn(
