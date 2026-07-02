@@ -9,7 +9,7 @@ import PageLayout from "@/app/components/page-layout"
 import Scrollbar from "@/app/components/scrollbar"
 import { useParams } from "next/navigation"
 import Markdown from "@/app/components/posts/markdown"
-import { PencilLine } from "lucide-react"
+import { Clock, PencilLine } from "lucide-react"
 import ErrorOverlay from "@/app/components/error-overlay"
 
 export default function PostPage() {
@@ -66,35 +66,57 @@ export default function PostPage() {
                             <div
                                 className={cn(
                                     "flex flex-col items-center justify-center",
-                                    "w-full h-32 px-3 py-2 gap-2",
+                                    "w-full min-h-32 h-fit p-6 gap-2",
                                     "bg-gray-700/50 rounded-lg overflow-hidden"
                                 )}
                             >
                                 <h1
                                     className={cn(
                                         "text-gray-200 text-base text-center",
-                                        "max-w-100 select-none pointer-events-none",
-                                        "line-clamp-3"
+                                        "max-w-100 select-none pointer-events-none"
                                     )}
                                 >
                                     {content.title}
                                 </h1>
-                                <span
+                                <div
                                     className={cn(
-                                        "flex items-center justify-start",
-                                        "w-fit h-fit gap-2 px-3"
+                                        "flex items-center justify-center flex-wrap",
+                                        "w-fit max-w-full h-fit gap-x-6 gap-y-1"
                                     )}
                                 >
-                                    <PencilLine className="text-teal-400" size={12} />
-                                    <h4
+                                    <span
                                         className={cn(
-                                            "text-sm text-nowrap text-teal-400",
-                                            "select-none pointer-events-none"
+                                            "flex items-center justify-center",
+                                            "w-fit h-fit gap-2"
                                         )}
                                     >
-                                        {content.publishedAt}
-                                    </h4>
-                                </span>
+                                        <PencilLine className="text-teal-400" size={12} />
+                                        <h4
+                                            className={cn(
+                                                "text-sm text-nowrap text-teal-400",
+                                                "select-none pointer-events-none"
+                                            )}
+                                        >
+                                            {content.publishedAt}
+                                        </h4>
+                                    </span>
+                                    <span
+                                        className={cn(
+                                            "flex items-center justify-center",
+                                            "w-fit h-fit gap-2"
+                                        )}
+                                    >
+                                        <Clock className="text-amber-400" size={12} />
+                                        <h4
+                                            className={cn(
+                                                "text-sm text-nowrap text-amber-400",
+                                                "select-none pointer-events-none"
+                                            )}
+                                        >
+                                            {content.readingTime.minutes} min read
+                                        </h4>
+                                    </span>
+                                </div>
                             </div>
                             <div
                                 className={cn(
