@@ -4,6 +4,7 @@ import { NextResponse, NextRequest } from "next/server"
 import fs from "fs/promises"
 import path from "path"
 import { PostData } from "../props"
+import { estimateReadingTime } from "../props"
 
 export async function GET(req: NextRequest) {
     try {
@@ -45,6 +46,7 @@ export async function GET(req: NextRequest) {
             id,
             title: post?.title,
             publishedAt: post?.publishedAt,
+            readingTime: estimateReadingTime(content),
             content,
         })
     } catch (err) {
