@@ -28,12 +28,32 @@ export default function PostBox({ className, onClick, post, ...props }: PostBoxP
                         {post.description}
                     </p>
                 </span>
+                <span
+                    className={cn(
+                        "flex items-center justify-start flex-wrap",
+                        "w-full h-fit gap-x-3 gap-y-1"
+                    )}
+                >
+                    {post.keywords.map((keyword, index) => {
+                        return (
+                            <span
+                                key={index}
+                                className={cn(
+                                    "text-sm text-amber-400 text-nowrap",
+                                    "select-none pointer-events-none"
+                                )}
+                            >
+                                #{keyword}
+                            </span>
+                        )
+                    })}
+                </span>
             </div>
             <span className={cn("flex items-center justify-between", "w-full h-fit gap-2 mb-1")}>
                 <span
                     className={cn(
                         "flex items-center justify-start",
-                        "w-fit h-fit gap-2",
+                        "flex-1 h-fit gap-2 truncate",
                         "text-teal-400 select-none pointer-events-none"
                     )}
                 >
