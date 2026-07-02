@@ -1,0 +1,29 @@
+[
+    {
+        "title": "WebinKuy",
+        "description": "An affordable web development platform that helps businesses and individuals create websites with a simple and fast ordering process. It streamlines service requests from consultation to project delivery.",
+        "stack": ["React", "Vite", "Sentry"],
+        "source": {
+            "code": "https://github.com/naufalhanif25/webinkuy-fe.git",
+            "app": "https://webinkuy.vercel.app/"
+        }
+    },
+    {
+        "title": "HabaImbudee",
+        "description": "A digital village portal designed to simplify administrative services and information access for Imbudee Village. It improves communication and public service efficiency for residents and village officials.",
+        "stack": ["Next.js", "React", "Supabase"],
+        "source": {
+            "code": "https://github.com/naufalhanif25/haba-imbudee.git",
+            "app": "https://habaimbudee.vercel.app/"
+        }
+    },
+    {
+        "title": "JakSabang",
+        "description": "An integrated tourism platform for exploring destinations, accommodations, and transportation in Sabang. It provides a convenient booking system for lodging and vehicle rentals.",
+        "stack": ["React", "Vite", "MongoDB", "Midtrans"],
+        "source": {
+            "code": "https://github.com/M-Aidil-Fitrah/JakSabang.git",
+            "app": "https://jaksabang.com/"
+        }
+    }
+]

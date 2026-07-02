@@ -1,0 +1,42 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Work List",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["title", "description", "stack"],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "Short project name"
+            },
+            "description": {
+                "type": "string",
+                "description": "Short project description"
+            },
+            "stack": {
+                "type": "array",
+                "description": "",
+                "items": {
+                    "type": "string",
+                    "description": "Technologies used in the project"
+                }
+            },
+            "source": {
+                "type": "object",
+                "description": "Links related to the project",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Source code repository URL"
+                    },
+                    "app": {
+                        "type": "string",
+                        "description": "Deployed application URL"
+                    }
+                }
+            }
+        },
+        "additionalProperties": false
+    }
+}
