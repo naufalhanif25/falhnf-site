@@ -31,6 +31,11 @@ export const ROUTES = [
         path: "/",
     }),
     new NavButton({
+        title: "works",
+        shortcut: "w",
+        path: "/works",
+    }),
+    new NavButton({
         title: "repos",
         shortcut: "r",
         path: "/repos",
