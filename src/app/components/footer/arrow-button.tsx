@@ -15,8 +15,8 @@ export default function ArrowButton({ active, className, children, ...props }: A
                 "text-sm h-6 min-w-7 px-2 cursor-pointer select-none",
                 className,
                 active
-                    ? "bg-gray-600 text-gray-200"
-                    : "bg-gray-700/50 text-gray-400 pointer-events-none"
+                    ? "bg-gray-700 text-gray-200"
+                    : "bg-gray-800 text-gray-400 pointer-events-none"
             )}
             {...props}
         >
