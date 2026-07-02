@@ -4,7 +4,7 @@
     "type": "array",
     "items": {
         "type": "object",
-        "required": ["title", "description", "publishedAt", "source"],
+        "required": ["title", "description", "publishedAt", "source", "keywords"],
         "properties": {
             "title": {
                 "type": "string",
@@ -17,6 +17,14 @@
             "publishedAt": {
                 "type": "string",
                 "description": "Post publication date"
+            },
+            "keywords": {
+                "type": "array",
+                "description": "",
+                "items": {
+                    "type":"string",
+                    "description": ""
+                }
             },
             "source": {
                 "type": "string",
