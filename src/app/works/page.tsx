@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react"
 import { handleMouseDown, updateScrollbar } from "../components/repos/utils"
 import PageLayout from "../components/page-layout"
 import Scrollbar from "../components/scrollbar"
-import { WorkRes } from "../api/works/props"
+import { WorksRes } from "../api/works/props"
 import WorkBox from "../components/works/work-box"
 import Loading from "../components/loading"
 
@@ -15,13 +15,13 @@ export default function WorksPage() {
     const containerRef = useRef<HTMLDivElement>(null)
     const scrollbarRef = useRef<HTMLSpanElement>(null)
     const isDraggingRef = useRef<boolean>(false)
-    const [works, setWorks] = useState<WorkRes | null>()
+    const [works, setWorks] = useState<WorksRes | null>()
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await fetch("/api/works")
-                const data = (await res.json()) as WorkRes
+                const data = (await res.json()) as WorksRes
 
                 setWorks(data)
             } catch (err) {
@@ -64,7 +64,7 @@ export default function WorksPage() {
                                         key={index}
                                         work={work}
                                         className={cn(
-                                            "w-full px-3 py-2 pb-3 gap-2",
+                                            "w-full px-3 py-2 gap-2",
                                             "bg-gray-700/50 rounded-lg overflow-hidden"
                                         )}
                                     />
