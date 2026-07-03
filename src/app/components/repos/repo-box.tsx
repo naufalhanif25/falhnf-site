@@ -48,7 +48,7 @@ export default function RepoBox({ repo, className, ...props }: RepoData) {
             <div
                 className={cn(
                     "flex items-center justify-between",
-                    "h-fit w-full px-1 gap-8 sm:gap-0 overflow-hidden"
+                    "h-fit w-full px-1 gap-6 sm:gap-0 overflow-hidden"
                 )}
             >
                 {repo.language && (
@@ -58,7 +58,7 @@ export default function RepoBox({ repo, className, ...props }: RepoData) {
                             "h-fit flex-1 gap-2 overflow-hidden"
                         )}
                     >
-                        <span className="size-2 bg-amber-400 rounded-full"></span>
+                        <span className="size-2 shrink-0 bg-amber-400 rounded-full"></span>
                         <h5
                             className={cn(
                                 "text-sm text-amber-400 text-nowrap",
