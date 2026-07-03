@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Award List",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["title", "issuer", "date", "type", "description"],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "Award or certificate title"
+            },
+            "issuer": {
+                "type": "string",
+                "description": "Issuing organization"
+            },
+            "date": {
+                "type": "string",
+                "description": "Award date"
+            },
+            "type": {
+                "type": "string",
+                "description": "Recognition category"
+            },
+            "description": {
+                "type": "string",
+                "description": "Brief award summary"
+            },
+            "url": {
+                "type": "string",
+                "description": "Official certificate URL"
+            }
+        },
+        "additionalProperties": false
+    }
+}
