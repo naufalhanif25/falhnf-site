@@ -1,9 +1,9 @@
 [
     {
-        "title": "Will AI Really Make Programmers Extinct? A Reality Check From Behind the Screen",
-        "description": "While vibe coding and AI agents can build fast prototypes, they struggle with severe technical limitations, hidden security vulnerabilities, and looming economic shifts. Real software resilience still relies on a strong foundation in computer science to validate, scale, and direct the code behind the screen.",
+        "title": "Will AI Really Replace Programmers?",
+        "description": "As AI agents and vibe coding reshape software development, concerns grow over reliability, security, scalability, and economic viability. This post explores whether AI could replace software engineers.",
         "publishedAt": "30 Jun 2026",
         "keywords": ["AI", "Agent", "VibeCoding", "Security", "SystemDesign"],
-        "source": "will_ai_really_make_programmers_extinct.md"
+        "source": "will_ai_really_replace_programmers.md"
     }
 ]
