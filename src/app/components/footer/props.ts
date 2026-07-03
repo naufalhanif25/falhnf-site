@@ -46,6 +46,11 @@ export const ROUTES = [
         path: "/stats",
     }),
     new NavButton({
+        title: "awards",
+        shortcut: "a",
+        path: "/awards",
+    }),
+    new NavButton({
         title: "posts",
         shortcut: "p",
         path: "/posts",
@@ -87,7 +92,7 @@ export const LINKS: Link[] = [
     }),
     new Link({
         name: "CV",
-        href: "https://drive.google.com/file/d/1bok0b9TM7yqr55I3J8ydwcWSW1pJ5WRO/view?usp=sharing",
+        href: "https://drive.google.com/file/d/1K-SoRapWF3WBmiaKBddnOZDjvXWmGBvs/view?usp=sharing",
         value: "CV - NAUFAL HANIF",
     }),
     new Link({
