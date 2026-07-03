@@ -8,7 +8,7 @@ export interface WorkData {
     }
 }
 
-export interface WorkRes {
+export interface WorksRes {
     works: WorkData[]
     total: number
 }
