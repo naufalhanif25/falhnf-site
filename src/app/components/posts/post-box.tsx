@@ -63,8 +63,7 @@ export default function PostBox({ className, onClick, post, ...props }: PostBoxP
                 <button
                     onClick={onClick}
                     className={cn(
-                        "flex items-center justify-center",
-                        "w-fit h-fit gap-2 px-3",
+                        "w-fit h-fit px-3",
                         "bg-teal-400 text-gray-950",
                         "text-sm text-nowrap cursor-pointer",
                         "overflow-hidden select-none"
