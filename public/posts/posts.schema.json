@@ -20,10 +20,10 @@
             },
             "keywords": {
                 "type": "array",
-                "description": "",
+                "description": "Post keywords",
                 "items": {
                     "type":"string",
-                    "description": ""
+                    "description": "Keyword"
                 }
             },
             "source": {
