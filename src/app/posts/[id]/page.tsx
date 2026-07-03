@@ -151,7 +151,7 @@ export default function PostPage() {
             {showScrollbar && (
                 <Scrollbar
                     ref={scrollbarRef}
-                    className="w-fit h-full"
+                    className="w-fit h-full shrink-0"
                     onMouseDown={() => handleMouseDown(isDraggingRef)}
                 />
             )}

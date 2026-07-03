@@ -42,8 +42,8 @@ export const TERMDATA: TermData[] = [
         content: (stats) => {
             return (
                 <span className="flex-1 truncate text-nowrap">
-                    <p className="sm:hidden">{stats.lastCommit.split(",")[0]}</p>
-                    <p className="hidden sm:block">{stats.lastCommit}</p>
+                    <p className="sm:hidden truncate">{stats.lastCommit.split(",")[0]}</p>
+                    <p className="hidden sm:block truncate">{stats.lastCommit}</p>
                 </span>
             )
         },

@@ -54,7 +54,7 @@ export default function ErrorOverlay({
                     "w-fit h-fit px-3"
                 )}
             >
-                back
+                &lt; back
             </button>
         </div>
     )

@@ -7,7 +7,7 @@ import { RepoData } from "./utils"
 export default function RepoBox({ repo, className, ...props }: RepoData) {
     return (
         <div className={cn("flex flex-col items-start justify-center", className)} {...props}>
-            <span className={cn("flex items-start justify-end", "w-full h-fit")}>
+            <span className={cn("flex items-start justify-end", "w-full h-fit gap-2")}>
                 <span
                     className={cn(
                         "flex flex-col items-start justify-start",
@@ -16,7 +16,8 @@ export default function RepoBox({ repo, className, ...props }: RepoData) {
                 >
                     <h3
                         className={cn(
-                            "text-base text-gray-200 text-nowrap",
+                            "text-base text-gray-200",
+                            "w-full h-fit",
                             "select-none pointer-events-none"
                         )}
                     >
@@ -25,7 +26,7 @@ export default function RepoBox({ repo, className, ...props }: RepoData) {
                     {repo.description && (
                         <h4
                             className={cn(
-                                "text-sm text-gray-400 line-clamp-2",
+                                "text-sm text-gray-400",
                                 "select-none pointer-events-none"
                             )}
                         >
@@ -47,15 +48,15 @@ export default function RepoBox({ repo, className, ...props }: RepoData) {
             </span>
             <div
                 className={cn(
-                    "flex items-center justify-between",
-                    "h-fit w-full px-1 gap-6 sm:gap-0 overflow-hidden"
+                    "flex items-center justify-between flex-wrap",
+                    "h-fit w-full px-1 gap-x-6 gap-y-1 sm:gap-0 overflow-hidden"
                 )}
             >
                 {repo.language && (
                     <span
                         className={cn(
                             "flex items-center justify-start",
-                            "h-fit flex-1 gap-2 overflow-hidden"
+                            "h-fit flex-1 min-w-30 gap-2 overflow-hidden"
                         )}
                     >
                         <span className="size-2 shrink-0 bg-amber-400 rounded-full"></span>
@@ -73,19 +74,18 @@ export default function RepoBox({ repo, className, ...props }: RepoData) {
                 <span
                     className={cn(
                         "flex items-center justify-start",
-                        "h-fit flex-1 gap-2 overflow-hidden"
+                        "h-fit flex-1 min-w-30 gap-2 overflow-hidden"
                     )}
                 >
                     <Clock className="text-teal-400" size={12} />
                     <span
                         className={cn(
                             "text-sm text-teal-400 text-nowrap",
-                            "select-none pointer-events-none",
-                            "truncate"
+                            "select-none pointer-events-none"
                         )}
                     >
-                        <h5 className="hidden sm:block">{repo.pushedAt}</h5>
-                        <h5 className="sm:hidden">{repo.pushedAt.split(",")[0]}</h5>
+                        <h5 className="hidden sm:block truncate">{repo.pushedAt}</h5>
+                        <h5 className="sm:hidden truncate">{repo.pushedAt.split(",")[0]}</h5>
                     </span>
                 </span>
             </div>

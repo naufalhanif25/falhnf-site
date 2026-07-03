@@ -7,11 +7,11 @@ import { NameProps, RoutePathProps } from "./props"
 export function Name({ name, className, ...props }: NameProps) {
     return (
         <div className={className} {...props}>
-            <span className={cn("flex items-center justify-start", "w-fit h-6 gap-2")}>
+            <span className={cn("flex items-center justify-start", "w-fit max-w-full h-6 gap-2")}>
                 <span
                     className={cn(
                         "flex items-center justify-center",
-                        "size-6 rounded-full bg-gray-700"
+                        "size-6 shrink-0 rounded-full bg-gray-700"
                     )}
                 >
                     <Terminal className="text-gray-200" size={14} />

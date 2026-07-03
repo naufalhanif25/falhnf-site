@@ -9,8 +9,7 @@ export default function WorkBox({ work, className, ...props }: WorkBoxProps) {
             <div className={cn("flex flex-col items-center justify-start", "w-full flex-1 gap-1")}>
                 <h4
                     className={cn(
-                        "text-base text-gray-200 text-nowrap",
-                        "truncate w-full",
+                        "w-full text-base text-gray-200",
                         "select-none pointer-events-none"
                     )}
                 >
@@ -48,40 +47,47 @@ export default function WorkBox({ work, className, ...props }: WorkBoxProps) {
                 </div>
             </div>
             {work.source && (
-                <div className={cn("flex items-start justify-start", "w-full h-fit gap-1 mb-1")}>
+                <div
+                    className={cn(
+                        "flex items-start justify-start flex-wrap",
+                        "w-full h-fit gap-2 mb-1"
+                    )}
+                >
                     <p
                         className={cn(
                             "text-sm text-gray-200 text-nowrap truncate",
-                            "flex-1 h-fit overflow-hidden",
+                            "flex-1 min-w-20 h-fit overflow-hidden",
                             "select-none pointer-events-none"
                         )}
                     >
                         [<ins className="text-teal-400 no-underline">Source</ins>]
                     </p>
-                    {work.source && work.source.code && (
-                        <button
-                            onClick={() => window.open(work.source!.code, "_blank")}
-                            className={cn(
-                                "text-sm text-gray-950 bg-teal-400",
-                                "w-fit h-fit px-3",
-                                "select-none"
-                            )}
-                        >
-                            code
-                        </button>
-                    )}
-                    {work.source && work.source.app && (
-                        <button
-                            onClick={() => window.open(work.source!.app, "_blank")}
-                            className={cn(
-                                "text-sm text-gray-950 bg-teal-400",
-                                "w-fit h-fit px-3",
-                                "select-none"
-                            )}
-                        >
-                            app
-                        </button>
-                    )}
+                    <span className={cn("flex items-center justify-start", "w-fit h-fit gap-1")}>
+                        {work.source && work.source.code && (
+                            <button
+                                onClick={() => window.open(work.source!.code, "_blank")}
+                                className={cn(
+                                    "text-sm text-gray-950 bg-teal-400",
+                                    "w-fit h-fit px-3",
+                                    "select-none"
+                                )}
+                            >
+                                code
+                            </button>
+                        )}
+                        {work.source && work.source.app && (
+                            <button
+                                onClick={() => window.open(work.source!.app, "_blank")}
+                                className={cn(
+                                    "text-sm text-gray-950 bg-teal-400",
+                                    "w-fit h-fit px-3",
+                                    "select-none"
+                                )}
+                            >
+                                app
+                            </button>
+                        )}
+                    </span>
                 </div>
             )}
         </div>

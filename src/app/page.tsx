@@ -75,19 +75,22 @@ export default function Home() {
                 <div
                     className={cn(
                         "flex flex-col items-center justify-center",
-                        "w-fit min-h-full h-fit gap-8 py-4"
+                        "w-fit max-w-full min-h-full h-fit gap-8 py-4",
+                        "overflow-hidden"
                     )}
                 >
                     <span
                         className={cn(
                             "flex flex-col items-start justify-center",
-                            "w-fit h-fit select-none"
+                            "w-fit max-w-full h-fit",
+                            "select-none overflow-hidden"
                         )}
                     >
                         <h4 className="text-base text-gray-400 text-nowrap">Hola, i am</h4>
                         <h2
                             className={cn(
-                                "text-gray-200 text-[clamp(2rem,12vw,2.4rem)] sm:text-5xl text-nowrap",
+                                "text-gray-200 text-[clamp(2rem,12vw,2.4rem)]",
+                                "sm:text-5xl text-nowrap truncate max-w-full",
                                 "leading-10 sm:leading-(--text-5xl--line-height)"
                             )}
                         >
@@ -96,12 +99,18 @@ export default function Home() {
                         <span
                             className={cn(
                                 "flex items-center justify-start gap-2",
-                                "text-nowrap text-teal-400 text-lg"
+                                "text-nowrap text-teal-400 text-lg",
+                                "max-w-full overflow-hidden w-fit"
                             )}
                         >
                             <p>&gt;</p>
-                            <span className="flex items-center justify-start">
-                                <p>{displayExpertise}</p>
+                            <span
+                                className={cn(
+                                    "flex items-center justify-start",
+                                    "w-fit max-w-full overflow-hidden"
+                                )}
+                            >
+                                <p className="truncate">{displayExpertise}</p>
                                 <p className="animate-cursor">|</p>
                             </span>
                         </span>
@@ -134,7 +143,7 @@ export default function Home() {
             {showScrollbar && (
                 <Scrollbar
                     ref={scrollbarRef}
-                    className="w-fit h-full"
+                    className="w-fit h-full shrink-0"
                     onMouseDown={() => handleMouseDown(isDraggingRef)}
                 />
             )}

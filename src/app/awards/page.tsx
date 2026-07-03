@@ -36,7 +36,7 @@ export default function AwardsPage() {
             containerRef={containerRef}
             scrollbarRef={scrollbarRef}
             isDraggingRef={isDraggingRef}
-            deps={[]}
+            deps={[awards]}
             trigger={updateTrigger}
             setTrigger={setUpdateTrigger}
             onTrigger={(state) => setShowScrollbar(state)}
@@ -80,8 +80,8 @@ export default function AwardsPage() {
                         >
                             <h4
                                 className={cn(
-                                    "text-gray-400 text-base text-nowrap",
-                                    "select-none pointer-events-none"
+                                    "text-base text-gray-400 text-center",
+                                    "select-none pointer-events-none max-w-full"
                                 )}
                             >
                                 -- No works found --
@@ -104,7 +104,7 @@ export default function AwardsPage() {
             {awards && showScrollbar && (
                 <Scrollbar
                     ref={scrollbarRef}
-                    className="w-fit h-full"
+                    className="w-fit h-full shrink-0"
                     onMouseDown={() => handleMouseDown(isDraggingRef)}
                 />
             )}

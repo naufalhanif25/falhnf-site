@@ -20,7 +20,7 @@ export default function Terminal({ className, command, children, ...props }: Ter
             {...props}
         >
             <span className={cn("flex items-center justify-between", "w-full h-fit")}>
-                <h4 className="text-amber-400 text-base">
+                <h4 className="text-amber-400 text-base truncate">
                     <ins className="text-gray-400 no-underline">&gt;</ins> {command}
                 </h4>
                 <button

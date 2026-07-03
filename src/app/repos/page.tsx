@@ -114,8 +114,8 @@ export default function ProjectsPage() {
                     ) : (
                         <h4
                             className={cn(
-                                "text-base text-gray-400 text-nowrap",
-                                "select-none pointer-events-none"
+                                "text-base text-gray-400 text-center",
+                                "select-none pointer-events-none max-w-full"
                             )}
                         >
                             -- No more repositories --
@@ -126,7 +126,7 @@ export default function ProjectsPage() {
             {repos.length > 0 && showScrollbar && (
                 <Scrollbar
                     ref={scrollbarRef}
-                    className="w-fit h-full"
+                    className="w-fit h-full shrink-0"
                     onMouseDown={() => handleMouseDown(isDraggingRef)}
                 />
             )}

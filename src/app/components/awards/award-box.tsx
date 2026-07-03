@@ -16,13 +16,13 @@ export default function AwardBox({ award, className, ...props }: AwardBoxProps) 
             >
                 <span
                     className={cn(
-                        "flex items-start justify-start",
-                        "w-full h-fit overflow-hidden gap-6"
+                        "flex flex-col sm:flex-row items-start justify-start",
+                        "w-full h-fit overflow-hidden gap-x-6"
                     )}
                 >
                     <h3
                         className={cn(
-                            "text-base text-gray-200 line-clamp-2",
+                            "text-base text-gray-200",
                             "flex-1 h-fit",
                             "select-none pointer-events-none"
                         )}
@@ -32,8 +32,8 @@ export default function AwardBox({ award, className, ...props }: AwardBoxProps) 
                     <span className={cn("flex items-center justify-center", "w-fit h-6")}>
                         <p
                             className={cn(
-                                "text-sm text-amber-400 text-nowrap",
-                                "w-fit h-fit truncate",
+                                "text-sm text-amber-400 text-nowrap truncate",
+                                "w-fit max-w-full h-fit truncate",
                                 "select-none pointer-events-none"
                             )}
                         >
@@ -43,18 +43,23 @@ export default function AwardBox({ award, className, ...props }: AwardBoxProps) 
                 </span>
                 <p
                     className={cn(
-                        "text-sm text-gray-400 line-clamp-5",
+                        "text-sm text-gray-400",
                         "w-full h-fit",
                         "select-none pointer-events-none"
                     )}
                 >
                     {award.description}
                 </p>
-                <span className={cn("flex items-center justify-start", "w-full h-fit gap-6")}>
+                <span
+                    className={cn(
+                        "flex items-start sm:items-center justify-start flex-wrap",
+                        "w-full h-fit gap-x-6 gap-y-1"
+                    )}
+                >
                     <span
                         className={cn(
                             "flex items-center justify-start",
-                            "gap-2 flex-1 h-fit overflow-hidden"
+                            "gap-2 flex-1 min-w-30 max-w-full h-fit overflow-hidden"
                         )}
                     >
                         <span className="size-2 shrink-0 bg-amber-400 rounded-full"></span>
@@ -70,7 +75,7 @@ export default function AwardBox({ award, className, ...props }: AwardBoxProps) 
                     <span
                         className={cn(
                             "flex items-center justify-start",
-                            "gap-2 flex-1 h-fit overflow-hidden"
+                            "gap-2 flex-1 min-w-30 h-fit overflow-hidden"
                         )}
                     >
                         <Calendar className="text-teal-400" size={12} />
@@ -88,14 +93,14 @@ export default function AwardBox({ award, className, ...props }: AwardBoxProps) 
             {award.url && (
                 <span
                     className={cn(
-                        "flex items-center justify-between",
+                        "flex items-center justify-between flex-wrap",
                         "w-full h-fit gap-2 mb-1 overflow-hidden"
                     )}
                 >
                     <h6
                         className={cn(
-                            "text-gray-200 text-nowrap text-sm",
-                            "select-none pointer-events-none"
+                            "text-gray-200 text-nowrap text-sm truncate",
+                            "select-none min-w-30 pointer-events-none"
                         )}
                     >
                         [<ins className="no-underline text-teal-400">ExternalLink</ins>]

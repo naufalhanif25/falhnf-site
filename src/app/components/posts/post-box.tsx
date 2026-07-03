@@ -11,7 +11,7 @@ export default function PostBox({ className, onClick, post, ...props }: PostBoxP
                 <h4
                     className={cn(
                         "text-base text-gray-200",
-                        "w-full h-fit line-clamp-2 overflow-hidden",
+                        "w-full h-fit overflow-hidden",
                         "select-none pointer-events-none"
                     )}
                 >
@@ -20,7 +20,7 @@ export default function PostBox({ className, onClick, post, ...props }: PostBoxP
                 <span className={cn("flex items-start justify-start", "w-full flex-1")}>
                     <p
                         className={cn(
-                            "text-sm text-gray-400 line-clamp-5",
+                            "text-sm text-gray-400",
                             "w-full h-fit",
                             "select-none pointer-events-none"
                         )}
@@ -49,11 +49,11 @@ export default function PostBox({ className, onClick, post, ...props }: PostBoxP
                     })}
                 </span>
             </div>
-            <span className={cn("flex items-center justify-between", "w-full h-fit gap-2 mb-1")}>
+            <span className={cn("flex flex-wrap items-center justify-between", "w-full h-fit gap-2 mb-1")}>
                 <span
                     className={cn(
                         "flex items-center justify-start",
-                        "flex-1 h-fit gap-2 truncate",
+                        "flex-1 min-w-30 h-fit gap-2 truncate",
                         "text-teal-400 select-none pointer-events-none"
                     )}
                 >

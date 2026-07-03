@@ -95,7 +95,7 @@ export default function StatsPage() {
                 {langPercentages && showScrollbar && (
                     <Scrollbar
                         ref={scrollbarRef}
-                        className="w-fit h-full"
+                        className="w-fit h-full shrink-0"
                         onMouseDown={() => handleMouseDown(isDraggingRef)}
                     />
                 )}
@@ -110,17 +110,30 @@ export default function StatsPage() {
                             <h5
                                 key={index}
                                 className={cn(
-                                    "flex items-center justify-start",
+                                    "flex items-start justify-start",
                                     "w-full overflow-hidden"
                                 )}
                             >
-                                <p className="max-w-6 flex-1 text-gray-400 pointer-events-none">
+                                <p className="w-6 text-gray-400 truncate shrink-0 pointer-events-none">
                                     {index + 1}
                                 </p>
-                                <p className="max-w-36 flex-1 pointer-events-none">
-                                    [<ins className="no-underline text-teal-400">{data.name}</ins>]
-                                </p>
-                                {data.content(langPercentages.stats)}
+                                <span
+                                    className={cn(
+                                        "flex items-center justify-start flex-wrap",
+                                        "flex-1 h-fit overflow-hidden"
+                                    )}
+                                >
+                                    <p className="max-w-36 min-w-32 flex-1 truncate pointer-events-none">
+                                        [
+                                        <ins className="no-underline text-teal-400">
+                                            {data.name}
+                                        </ins>
+                                        ]
+                                    </p>
+                                    <ins className="no-underline flex-1 overflow-hidden min-w-30">
+                                        {data.content(langPercentages.stats)}
+                                    </ins>
+                                </span>
                             </h5>
                         )
                     })}
