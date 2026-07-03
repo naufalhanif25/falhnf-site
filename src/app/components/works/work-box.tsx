@@ -48,7 +48,7 @@ export default function WorkBox({ work, className, ...props }: WorkBoxProps) {
                 </div>
             </div>
             {work.source && (
-                <div className={cn("flex items-start justify-start", "w-full h-fit gap-1")}>
+                <div className={cn("flex items-start justify-start", "w-full h-fit gap-1 mb-1")}>
                     <p
                         className={cn(
                             "text-sm text-gray-200 text-nowrap truncate",
@@ -58,10 +58,9 @@ export default function WorkBox({ work, className, ...props }: WorkBoxProps) {
                     >
                         [<ins className="text-teal-400 no-underline">Source</ins>]
                     </p>
-                    {work.source.code && (
-                        <a
-                            href={work.source.code}
-                            target="_blank"
+                    {work.source && work.source.code && (
+                        <button
+                            onClick={() => window.open(work.source!.code, "_blank")}
                             className={cn(
                                 "text-sm text-gray-950 bg-teal-400",
                                 "w-fit h-fit px-3",
@@ -69,12 +68,11 @@ export default function WorkBox({ work, className, ...props }: WorkBoxProps) {
                             )}
                         >
                             code
-                        </a>
+                        </button>
                     )}
-                    {work.source.app && (
-                        <a
-                            href={work.source.app}
-                            target="_blank"
+                    {work.source && work.source.app && (
+                        <button
+                            onClick={() => window.open(work.source!.app, "_blank")}
                             className={cn(
                                 "text-sm text-gray-950 bg-teal-400",
                                 "w-fit h-fit px-3",
@@ -82,7 +80,7 @@ export default function WorkBox({ work, className, ...props }: WorkBoxProps) {
                             )}
                         >
                             app
-                        </a>
+                        </button>
                     )}
                 </div>
             )}
