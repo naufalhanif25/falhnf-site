@@ -8,7 +8,7 @@ import Badges from "./components/home/badges"
 import { EXPERTISE } from "./components/home/props"
 import PageLayout from "./components/page-layout"
 
-export default function Home() {
+export default function Page() {
     const expertise = useMemo(() => EXPERTISE, [])
     const [showScrollbar, setShowScrollbar] = useState(false)
     const [displayExpertise, setDisplayExpertise] = useState<string>("")

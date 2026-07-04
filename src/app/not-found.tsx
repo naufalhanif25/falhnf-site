@@ -1,7 +1,10 @@
-"use client"
-
 import { cn } from "./lib/utils"
 import ErrorOverlay from "./components/error-overlay"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Page Not Found",
+}
 
 export default function NotFound() {
     return (
