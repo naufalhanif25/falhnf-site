@@ -22,11 +22,11 @@ export const BADGES: BadgeData[] = [
     }),
     new BadgeData({
         name: "Year",
-        value: "3rd",
+        value: "4th",
     }),
     new BadgeData({
         name: "GPA",
-        value: 3.71,
+        value: 3.74,
     }),
 ]
 
