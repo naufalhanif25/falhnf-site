@@ -111,7 +111,7 @@ export default function Window({ className, children, ...props }: HTMLAttributes
                                     className: cn(
                                         "group-active:text-gray-400",
                                         "transition duration-100 ease-out",
-                                        isRefreshing && "animate-spin"
+                                        isRefreshing && "animate-refresh"
                                     ),
                                 },
                             })

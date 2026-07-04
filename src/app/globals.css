@@ -32,3 +32,13 @@
 .animate-cursor {
     animation: blink 1s step-end infinite;
 }
+
+@keyframes refresh {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-refresh {
+    animation: refresh 1s linear;
+}
