@@ -3,8 +3,8 @@
 import { NextResponse, NextRequest } from "next/server"
 import fs from "fs/promises"
 import path from "path"
-import { PostData } from "../props"
-import { estimateReadingTime } from "../props"
+import { estimateReadingTime, PostContentRes } from "../props"
+import getPost from "./post"
 
 export async function GET(req: NextRequest) {
     try {
@@ -18,16 +18,8 @@ export async function GET(req: NextRequest) {
                 { status: 400 }
             )
         }
-        const basepath = path.join(process.cwd(), "public", "posts")
-        const postpath = path.join(basepath, "contents")
-        const posts = await fs.readFile(path.join(basepath, "posts.json"), "utf-8")
-        const postlist = JSON.parse(posts) as PostData[]
-        const post = postlist
-            .map((post) => ({
-                id: path.basename(post.source).replaceAll(/[ _]/g, "-").split(".")[0],
-                ...post,
-            }))
-            .find((data) => data.id === id)
+        const postpath = path.join(process.cwd(), "public", "posts", "contents")
+        const post = (await getPost(id)) as PostContentRes | undefined
         const files = await fs.readdir(postpath)
         const target = files.find((f) => f.replaceAll(/[ _]/g, "-").split(".")[0] === id)
 
