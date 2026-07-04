@@ -17,7 +17,10 @@ const firaMono = Fira_Mono({
 })
 
 export const metadata: Metadata = {
-    title: "Naufal Hanif",
+    title: {
+        default: "Naufal Hanif",
+        template: "%s | Naufal Hanif"
+    },
     description:
         "Portfolio of Naufal Hanif, an Informatics undergraduate at Syiah Kuala University " +
         "passionate about software engineering, systems programming, web development, " +
@@ -40,6 +43,9 @@ export const metadata: Metadata = {
         "Portfolio",
     ],
     icons: "/icon.ico",
+    other: {
+        "google-site-verification": "QCAW3DiOi51Iz-5jXaXemUoOkT_4InHkMUWrvG5dYXY",
+    },
 }
 
 export default function RootLayout({
