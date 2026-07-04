@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "../../lib/utils"
-import { HTMLAttributes, useEffect, useReducer } from "react"
+import { HTMLAttributes, useEffect, useReducer, useState } from "react"
 import Header from "../header/header"
 import Footer from "../footer/footer"
 import WindowButton from "../header/window-button"
@@ -17,6 +17,7 @@ export default function Window({ className, children, ...props }: HTMLAttributes
         history: [],
         index: -1,
     })
+    const [isRefreshing, setIsRefreshing] = useState<boolean>(false)
 
     useEffect(() => {
         dispatch({
@@ -34,6 +35,13 @@ export default function Window({ className, children, ...props }: HTMLAttributes
         dispatch({ type: "FORWARD" })
         const path = state.history[state.index + 1]
         if (path) router.push(path)
+    }
+    const handleRefresh = () => {
+        setIsRefreshing(true)
+        router.refresh()
+        setTimeout(() => {
+            setIsRefreshing(false)
+        }, 1000)
     }
     return (
         <section
@@ -94,7 +102,7 @@ export default function Window({ className, children, ...props }: HTMLAttributes
                         className={cn("group flex items-center justify-center")}
                     />
                     <WindowButton
-                        active={true}
+                        active={!isRefreshing}
                         button={
                             new WindowButtonIcon({
                                 icon: RefreshCw,
@@ -102,12 +110,13 @@ export default function Window({ className, children, ...props }: HTMLAttributes
                                     size: 14,
                                     className: cn(
                                         "group-active:text-gray-400",
-                                        "transition duration-100 ease-out"
+                                        "transition duration-100 ease-out",
+                                        isRefreshing && "animate-spin"
                                     ),
                                 },
                             })
                         }
-                        onClick={() => router.refresh()}
+                        onClick={handleRefresh}
                         className={cn("group flex items-center justify-center")}
                     />
                 </div>
