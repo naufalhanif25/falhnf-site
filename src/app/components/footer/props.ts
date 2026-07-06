@@ -72,13 +72,13 @@ export class Link {
 export const LINKS: Link[] = [
     new Link({
         name: "Email",
-        href: "mailto:falhnf25@gmail.com",
-        value: "falhnf25@gmail.com",
+        href: "mailto:naufal.hanif2525@gmail.com",
+        value: "naufal.hanif2525@gmail.com",
     }),
     new Link({
         name: "LinkedIn",
-        href: "https://www.linkedin.com/in/naufal-hanif-4a17a3315",
-        value: "in/naufal-hanif-4a17a3315",
+        href: "https://www.linkedin.com/in/falhnf",
+        value: "linkedin.com/in/falhnf",
     }),
     new Link({
         name: "Instagram",
